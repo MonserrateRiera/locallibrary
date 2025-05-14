@@ -1,0 +1,52 @@
+# Entorno virtual
+env/
+venv/
+ENV/
+*.pyc
+__pycache__/
+
+# Archivos temporales
+*.log
+*.pot
+*.py[cod]
+*.sqlite3
+*.db
+*.swp
+*.swo
+.DS_Store
+
+# Archivos del sistema y del editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de pruebas
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+
+# Archivos de configuración local
+.env
+*.env
+.env.*
+
+# Archivos de compilación
+build/
+dist/
+*.egg-info/
+
+# Django static/media generados por el usuario
+/staticfiles/
+/media/
+
+# Si usas Docker
+*.pid
+docker-compose.override.yml
+
+# Migrations (opcional, si se regeneran con frecuencia en equipos diferentes)
+# Puedes ignorarlas si no las quieres versionar inicialmente:
+# */migrations/
+# !*/migrations/__init__.py
