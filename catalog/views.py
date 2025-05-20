@@ -51,3 +51,16 @@ class AuthorListView(generic.ListView):
 
 class AuthorDetailView( generic.DetailView ):
     model = Author
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+class LoanedBooksByUserListView(LoginRequiredMixin,generic.ListView):
+    """
+    Vista genérica basada en clases que enumera los libros prestados al usuario actual.
+    """
+    model = BookInstance
+    template_name ='catalog/bookinstance_list_borrowed_user.html'
+    paginate_by = 5
+
+    def get_queryset(self):
+        return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o').order_by('due_back')
